@@ -1,19 +1,15 @@
 import argparse
 import sys
+import time
 
 def main(args):
     with open('data/day1/{}'.format(args.inputFileName)) as inputFile:
         inputFileContents = inputFile.read()
-    splitInput = inputFileContents.split('\n')
-    elfCalories = []
-    currentCalories = 0
-    for food in splitInput:
-        if not food:
-            elfCalories.append(currentCalories)
-            currentCalories = 0
-        else:
-            currentCalories += int(food)
-    print(sum(sorted(elfCalories)[-3:]))
+    st = time.process_time()
+    res = sum(sorted(map(lambda s: sum(map(int, s.split(' ') )), ' '.join(inputFileContents.split('\n')).split('  ')))[-3:])
+    et = time.process_time()
+    print('Calc time: {:.6f}s'.format(et-st))
+    print(res)
     return 0
 
 if __name__ == '__main__':
