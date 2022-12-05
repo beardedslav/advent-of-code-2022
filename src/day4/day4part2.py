@@ -1,7 +1,6 @@
 import argparse
 import sys
 import time
-import string
 
 def main(args):
     with open('data/day4/{}'.format(args.inputFileName)) as inputFile:
