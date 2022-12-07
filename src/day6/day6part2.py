@@ -1,7 +1,6 @@
 import argparse
 import sys
 import time
-from collections import deque
 
 NO_OF_UNIQUE_CHARS = 14
 
